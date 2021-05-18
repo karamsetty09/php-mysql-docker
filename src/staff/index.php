@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Visas.com.au</title>
-    <link rel="stylesheet" media="all" href="../stylesheets/staff.css" />
+<?php require_once('../private/initialize.php'); ?>
 
-</head>
-<body>
-    <header><h1><center>visas.com.au</center></h1></header>
-    <navigation>
+<?php include('../private/shared/staff_header.php'); ?>
+
+    <div id="content">
+    </div>
+
+<?php include('../private/shared/staff_footer.php'); ?>
     
-    <ul>
-        <li><a href="index.php">Menu</a></li>
-    </ul>
-    </navigation>
-
-    <div id="content"></div>
-
-    <footer><center>
-    &copy; <?php echo date('Y'); ?> Visas.com.au
-    </center>
-    </footer>
-
-</body>
-</html>
