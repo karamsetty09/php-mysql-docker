@@ -1,6 +1,6 @@
 <?php 
 
-require_once('../private/initialize.php'); 
+require_once('../../private/initialize.php'); 
 //can't use SHARED_PATH  here as this is a link which brings those features
 ?>
 
