@@ -12,7 +12,10 @@ require_once('../../private/initialize.php');
     <div id = "main-menu">
         <h2>main Menu</h2>
         <ul>
-            <li><a href="visas/index.php">Subjects</a></li>
+            <li>
+            <a href="<?php echo url_for('/staff/visas/index.php'); ?>"
+            >Subjects</a>
+            </li>
         </ul>
     </div>
     </div>
