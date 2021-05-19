@@ -3,7 +3,7 @@
 <?php
 echo "In show page";
 $id = $_GET['id'] ?? '1';
-echo "Id Number:" . $id;
+echo "Id Number:" . h($id);
 
 
 ?>
