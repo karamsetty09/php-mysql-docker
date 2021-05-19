@@ -7,7 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Visas.com.au <?php echo $page_title; ?></title>
-    <link rel="stylesheet" media="all" href="../stylesheets/staff.css" />
+    <link rel="stylesheet" media="all" 
+    href="<?php echo url_for('/stylesheets/staff.css'); ?>" />
 
 </head>
 <body>
@@ -18,7 +19,7 @@
         <li>
         <a href="
         <?php 
-        echo WWW_ROOT . '/staff/index.php'; 
+        echo url_for('/staff/index.php'); 
         ?>"
         >
         Menu
