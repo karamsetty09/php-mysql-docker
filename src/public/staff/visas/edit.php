@@ -16,6 +16,30 @@ if($test == '404') {
 ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
+<?php 
+if(!isset($_GET['id'])){
+    redirect_to(url_for('/staff/visas/index.php'));
+}
+$id = $_GET['id'];
+$menu_name = '';
+$postiion = '';
+$visible = '';
+?>
+
+<?php 
+if(is_post_request()) {
+    $menu_name = $_POST['menu_name'] ?? '';
+    $postion = $_POST['position'] ?? '';
+    $visible = $_POST['visible'] ?? '';
+    
+    echo "Form Parameters <br />";
+    echo "Menu Name:" . $menu_name . "<br />";
+    echo "Position:" . $postion . "<br />";
+    echo "Vidivle:" . $visible . "<br />";
+} 
+
+?>
+
 <div id="content">
 
   <a class="back-link" href="<?php echo url_for('/staff/visas/index.php'); ?>">&laquo; Back to List</a>
@@ -23,10 +47,10 @@ if($test == '404') {
   <div class="visa new">
     <h1>Edit Visa</h1>
 
-    <form action="" method="post">
+    <form action="<?php echo url_for('/staff/visas/edit.php?id=' . h(u($id)) );?>" method="post">
       <dl>
         <dt>visa Name</dt>
-        <dd><input type="text" name="menu_name" value="" /></dd>
+        <dd><input type="text" name="menu_name" value="<?php echo $menu_name;?>" /></dd>
       </dl>
       <dl>
         <dt>Position</dt>
