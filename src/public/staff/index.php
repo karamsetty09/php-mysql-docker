@@ -16,6 +16,11 @@ require_once('../../private/initialize.php');
             <a href="<?php echo url_for('/staff/visas/index.php'); ?>"
             >Subjects</a>
             </li>
+            <li>
+            <a href="<?php echo url_for('/staff/pages/index.php'); ?>">
+            Pages</a>
+            </li>
+            
         </ul>
     </div>
     </div>
