@@ -21,9 +21,9 @@ if($test == '404') {
   <a class="back-link" href="<?php echo url_for('/staff/visas/index.php'); ?>">&laquo; Back to List</a>
 
   <div class="visa new">
-    <h1>Create Visa</h1>
+    <h1>Edit Visa</h1>
 
-    <form action="<?php echo url_for('/staff/visas/create.php') ; ?>" method="post">
+    <form action="" method="post">
       <dl>
         <dt>visa Name</dt>
         <dd><input type="text" name="menu_name" value="" /></dd>
