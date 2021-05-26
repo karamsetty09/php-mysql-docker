@@ -1,12 +1,7 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-  $subjects = [
-    ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'About Globe Bank'],
-    ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Consumer'],
-    ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Small Business'],
-    ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
-  ];
+  
   // calling the sql written function module
   $subject_set = find_all_visas();
   
@@ -34,14 +29,14 @@
         <th>&nbsp;</th>
         global $db;</tr>
 
-      <?php foreach($subjects as $subject) { ?>
+      <?php while($visa = mysqli_fetch_assoc($subject_set)) { ?>
         <tr>
-          <td><?php echo $subject['id']; ?></td>
-          <td><?php echo $subject['position']; ?></td>
-          <td><?php echo $subject['visible'] == 1 ? 'true' : 'false'; ?></td>
-    	    <td><?php echo $subject['menu_name']; ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/visas/show.php?id=' . h(u($subject['id']))); ?>">View</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/visas/edit.php?id=' . h(u($subject['id']))); ?>">Edit</a></td>
+          <td><?php echo $visa['ID']; ?></td>
+          <td><?php echo $visa['VISA_NAME']; ?></td>
+          <td><?php echo $visa['VISIBLE'] == 1 ? 'true' : 'false'; ?></td>
+    	    <td><?php echo $visa['POSITION']; ?></td>
+          <td><a class="action" href="<?php echo url_for('/staff/visa/show.php?id=' . h(u($visa['id']))); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/visa/edit.php?id=' . h(u($visa['id']))); ?>">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
     	  </tr>
       <?php } ?>
