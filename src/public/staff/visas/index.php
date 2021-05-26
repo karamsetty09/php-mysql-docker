@@ -8,7 +8,7 @@
     ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
   ];
   // calling the sql written function module
-  $subject_set = find_all_subjects();
+  $subject_set = find_all_visas();
   
 ?>
 

@@ -1,11 +1,13 @@
 <?php
 
 
-function find_all_subjects(){
+function find_all_visas(){
     global $db;
-    $sql = "SELECT * FROM SUBJECTS ";
+
+    $sql = "SELECT * FROM VISAS_TYPES ";
     $sql .= "ORDER BY position ASC";
-    $subject_set = mysqli_query($db, $sql);
+    $result = mysqli_query($db, $sql);
+    return $result;
 }
 
 
