@@ -3,7 +3,7 @@
 <?php
   
   // calling the sql written function module
-  $subject_set = find_all_visas();
+  $visas_set = find_all_visas();
   
 ?>
 
@@ -29,7 +29,7 @@
         <th>&nbsp;</th>
         global $db;</tr>
 
-      <?php while($visa = mysqli_fetch_assoc($subject_set)) { ?>
+      <?php while($visa = mysqli_fetch_assoc($visas_set)) { ?>
         <tr>
           <td><?php echo $visa['ID']; ?></td>
           <td><?php echo $visa['VISA_NAME']; ?></td>
@@ -47,7 +47,7 @@
 </div>
 
 <?php 
-mysqli_free_result($subject_set); 
+mysqli_free_result($visas_set); 
 ?>
 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

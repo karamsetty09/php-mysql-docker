@@ -2,12 +2,8 @@
 
 <?php include(SHARED_PATH . '/staff_header.php');?>
 <?php
-  $visas = [
-    ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'Student Visa'],
-    ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Temporary Visa'],
-    ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Permanent visa'],
-    ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Parent Visa'],
-  ];
+  
+  $pages_set = find_all_pages();
 ?>
 
 
@@ -31,17 +27,17 @@
         <th>&nbsp;</th>
   	  </tr>
 
-      <?php foreach($visas as $visa) { ?>
+      <?php while($page = mysqli_fetch_assoc($pages_set) ) { ?>
         <tr>
-          <td><?php echo $visa['id']; ?></td>
-          <td><?php echo $visa['position']; ?></td>
-          <td><?php echo $visa['visible'] == 1 ? 'true' : 'false'; ?></td>
-    	    <td><?php echo $visa['menu_name']; ?></td>
+          <td><?php echo $page['ID']; ?></td>
+          <td><?php echo $page['MENU_NAME']; ?></td>
+          <td><?php echo $page['VISIBLE'] == 1 ? 'true' : 'false'; ?></td>
+    	    <td><?php echo $page['POSITION']; ?></td>
           <td><a class="action" 
-          href="<?php echo url_for('/staff/pages/show.php?id=' . $visa['id']); ?>">
+          href="<?php echo url_for('/staff/pages/show.php?id=' . $page['id']); ?>">
           View</a>
           </td>
-          <td><a class="action" href="<?php echo url_for('/staff/pages/edit.php?id=' . $visa['id']);?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/pages/edit.php?id=' . $page['id']);?>">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
     	  </tr>
       <?php } ?>
@@ -50,6 +46,6 @@
   </div>
 
 </div>
-
+<?php mysqli_free_result($pages_set); ?>
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>
 
