@@ -7,6 +7,9 @@
     ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Small Business'],
     ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
   ];
+  // calling the sql written function module
+  $subject_set = find_all_subjects();
+  
 ?>
 
 <?php $page_title = " - Visa Types's "; ?>
@@ -29,7 +32,7 @@
   	    <th>&nbsp;</th>
   	    <th>&nbsp;</th>
         <th>&nbsp;</th>
-  	  </tr>
+        global $db;</tr>
 
       <?php foreach($subjects as $subject) { ?>
         <tr>
@@ -47,5 +50,9 @@
   </div>
 
 </div>
+
+<?php 
+mysqli_free_result($subject_set); 
+?>
 
 <?php include(SHARED_PATH . '/staff_footer.php'); ?>

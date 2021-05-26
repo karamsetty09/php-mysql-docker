@@ -26,8 +26,9 @@ define("WWW_ROOT", $doc_root);
 
 require_once('functions.php');
 require_once('databases.php');
+require_once('query_functions.php');
 
 $db = db_connect();
-//print_r($db);
-//print_r("hello");
+
+
 ?>
