@@ -35,8 +35,8 @@
           <td><?php echo $visa['VISA_NAME']; ?></td>
           <td><?php echo $visa['VISIBLE'] == 1 ? 'true' : 'false'; ?></td>
     	    <td><?php echo $visa['POSITION']; ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/visa/show.php?id=' . h(u($visa['id']))); ?>">View</a></td>
-          <td><a class="action" href="<?php echo url_for('/staff/visa/edit.php?id=' . h(u($visa['id']))); ?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/visas/show.php?id=' . $visa['ID']); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/visas/edit.php?id=' . $visa['ID']); ?>">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
     	  </tr>
       <?php } ?>

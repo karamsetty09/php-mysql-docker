@@ -33,11 +33,8 @@
           <td><?php echo $page['MENU_NAME']; ?></td>
           <td><?php echo $page['VISIBLE'] == 1 ? 'true' : 'false'; ?></td>
     	    <td><?php echo $page['POSITION']; ?></td>
-          <td><a class="action" 
-          href="<?php echo url_for('/staff/pages/show.php?id=' . $page['id']); ?>">
-          View</a>
-          </td>
-          <td><a class="action" href="<?php echo url_for('/staff/pages/edit.php?id=' . $page['id']);?>">Edit</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/pages/show.php?id=' . $page['ID']); ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/pages/edit.php?id=' . $page['ID']);?>">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
     	  </tr>
       <?php } ?>
