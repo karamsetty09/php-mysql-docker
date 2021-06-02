@@ -47,7 +47,6 @@ function insert_visatype($new_id, $visa_name, $postion, $visible ){
     $result = mysqli_query($db, $sql);
     if($result){
         return true;
-        
     }else{
         echo mysqli_error($db);
         db_disconnect($db);
