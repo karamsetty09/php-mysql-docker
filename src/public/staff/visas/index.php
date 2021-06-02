@@ -12,7 +12,7 @@
 
 <div id="content">
   <div class="subjects listing">
-    <h1>Subjects</h1>
+    <h1>Visa Types</h1>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/staff/visas/new.php')?>">Create New visa Type</a>

@@ -10,7 +10,7 @@
 
 <div id="content">
   <div class="subjects listing">
-    <h1>Subjects</h1>
+    <h1>Employees</h1>
 
     <div class="actions">
       <a class="action" href="<?php echo url_for('/staff/pages/new.php') ;?> ">Create New Page</a>

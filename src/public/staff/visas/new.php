@@ -24,14 +24,19 @@ if($test == '404') {
     <h1>Create Visa</h1>
 
     <form action="<?php echo url_for('/staff/visas/create.php') ; ?>" method="post">
+    <dl>
+        <dt>visa ID</dt>
+        <dd><input type="number" name="ID" value="" /></dd>
+      </dl>
+      <dl>
       <dl>
         <dt>visa Name</dt>
-        <dd><input type="text" name="menu_name" value="" /></dd>
+        <dd><input type="text" name="VISA_NAME" value="" /></dd>
       </dl>
       <dl>
         <dt>Position</dt>
         <dd>
-          <select name="position">
+          <select name="POSITION">
             <option value="1">1</option>
           </select>
         </dd>
@@ -39,8 +44,8 @@ if($test == '404') {
       <dl>
         <dt>Visible</dt>
         <dd>
-          <input type="hidden" name="visible" value="0" />
-          <input type="checkbox" name="visible" value="1" />
+          <input type="hidden" name="VISIBLE" value="0" />
+          <input type="checkbox" name="VISIBLE" value="1" />
         </dd>
       </dl>
       <div id="operations">

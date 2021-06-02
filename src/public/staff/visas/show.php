@@ -5,14 +5,7 @@ echo "In show page";
 $id = $_GET['id'] ?? '1';
 echo "Id Number:" . h($id);
 
-$sql = "SELECT * FROM VISAS_TYPES ";
-$sql .= "WHERE id='" . $id . "'";
-
-$result = mysqli_query($db, $sql);
-confirm_result_set($result);
-
-$visa = mysqli_fetch_assoc($result);
-mysqli_free_result($result);
+$visa = find_subject_by_id($id);
 
 ?>
 
