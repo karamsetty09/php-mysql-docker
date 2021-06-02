@@ -54,5 +54,24 @@ function insert_visatype($new_id, $visa_name, $postion, $visible ){
     }
 }
 
+function update_visatype($visa_id, $visa_name, $postion, $visible){
+    global $db;
+    $sql = "UPDATE VISAS_TYPES SET ";
+    $sql .= "ID='" . $visa_id . "', ";
+    $sql .= "VISA_NAME='" . $visa_name . "', ";
+    $sql .= "POSITION='" . $postion . "',";
+    $sql .= "VISIBLE='" . $visible . "' ";
+    $sql .= "WHERE ID='". $visa_id . "' ";
+    $sql .= "LIMIT 1";
 
+    $result = mysqli_query($db, $sql);
+    if($result){
+      return true;
+    }else{
+      echo mysqli_error($db);
+      db_disconnect($db);
+      exit;
+    }
+
+}
 ?>
