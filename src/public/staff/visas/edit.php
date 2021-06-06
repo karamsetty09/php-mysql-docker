@@ -44,7 +44,11 @@ if(is_post_request()) {
     redirect_to(url_for('/staff/visas/show.php?id=' . $visa_id));
 } else{
   $visa = find_subject_by_id($id);
-}
+  
+  $visa_set = find_all_visas();
+  $visa_count = mysqli_num_rows($visa_set);
+  mysqli_free_result($visa_set);
+  }
 
 ?>
 
@@ -68,7 +72,15 @@ if(is_post_request()) {
         <dt>Position</dt>
         <dd>
           <select name="POSITION">
-            <option value="1"<?php if($visa['POSITION'] == "1") {echo " selected";}?>>1</option>
+            <?php 
+            for($i=1; $i <= $visa_count; $i++){
+              echo "<option value=\"{$i}\"";
+              if($visa["POSITION"] == $i){
+                echo " selected";
+              }
+              echo ">{$i}</option>";
+            }
+            ?>
           </select>
         </dd>
       </dl>

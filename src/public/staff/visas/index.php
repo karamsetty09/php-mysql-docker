@@ -20,10 +20,10 @@
 
   	<table class="list">
   	  <tr>
-        <th>ID</th>
-        <th>Position</th>
+        <th>Visa ID</th>
+        <th>Visa Name</th>
         <th>Visible</th>
-  	    <th>Name</th>
+  	    <th>Position</th>
   	    <th>&nbsp;</th>
   	    <th>&nbsp;</th>
         <th>&nbsp;</th>

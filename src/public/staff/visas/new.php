@@ -2,6 +2,14 @@
 
 require_once('../../../private/initialize.php'); 
 
+$visa_set = find_all_visas();
+$visa_count = mysqli_num_rows($visa_set) + 1;
+mysqli_free_result($visa_set);
+
+$visa = [];
+$visa['POSITION']= $visa_count;
+
+
 $test = $_GET['test'] ?? '';
 
 if($test == '404') { 
@@ -37,7 +45,15 @@ if($test == '404') {
         <dt>Position</dt>
         <dd>
           <select name="POSITION">
-            <option value="1">1</option>
+          <?php 
+            for($i=1; $i <= $visa_count; $i++){
+              echo "<option value=\"{$i}\"";
+              if($visa["POSITION"] == $i){
+                echo " selected";
+              }
+              echo ">{$i}</option>";
+            }
+            ?>
           </select>
         </dd>
       </dl>
