@@ -23,15 +23,32 @@ function find_all_pages(){
 function find_subject_by_id($id){
     global $db;
     $sql = "SELECT * FROM VISAS_TYPES ";
-$sql .= "WHERE id='" . $id . "'";
+    $sql .= "WHERE id='" . $id . "'";
+    $result = mysqli_query($db, $sql);
+    confirm_result_set($result);
+    $visa = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+    return $visa;
+}
 
-$result = mysqli_query($db, $sql);
-confirm_result_set($result);
+function delete_visatype($id){
+    global $db;
+    $sql = "DELETE FROM VISAS_TYPES ";
+    $sql .= "WHERE ID='" . $id . "' ";
+    $sql .= "LIMIT 1";
 
-$visa = mysqli_fetch_assoc($result);
-mysqli_free_result($result);
-return $visa;
+    $result = mysqli_query($db, $sql);
 
+    // For Deleting the 
+
+    if($result){
+        return true;
+
+    }else{
+        echo mysqli_error($db);
+        db_disconnect($db);
+        exit;
+    }
 }
 
 function insert_visatype($new_id, $visa_name, $postion, $visible ){

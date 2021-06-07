@@ -37,7 +37,7 @@
     	    <td><?php echo $visa['POSITION']; ?></td>
           <td><a class="action" href="<?php echo url_for('/staff/visas/show.php?id=' . $visa['ID']); ?>">View</a></td>
           <td><a class="action" href="<?php echo url_for('/staff/visas/edit.php?id=' . $visa['ID']); ?>">Edit</a></td>
-          <td><a class="action" href="">Delete</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/visas/delete.php?id=' . $visa['ID']); ?>">Delete</a></td>
     	  </tr>
       <?php } ?>
   	</table>
